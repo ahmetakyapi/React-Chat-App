@@ -2,8 +2,7 @@
 
 I used React, Socket.io and Styled Components in this project.
 
-https://user-images.githubusercontent.com/71101248/121727978-519d6580-caf5-11eb-8193-d98e822a1a41.mp4
-
+https://user-images.githubusercontent.com/71101248/121728299-c2dd1880-caf5-11eb-8551-0001846fbb05.mp4
 
 
 ## Installation
