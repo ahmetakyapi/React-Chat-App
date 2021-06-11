@@ -1,27 +1,27 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import io from "socket.io-client";
+import Header from "./components/Header";
 
 const Page = styled.div`
   display: flex;
   height: 100vh;
   width: 100%;
   align-items: center;
-  background-color: #46516e;
+  background-color: #11999E;
   flex-direction: column;
 `;
-
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  height: 500px;
-  max-height: 500px;
+  height: 600px;
+  max-height: 600px;
   overflow: auto;
   width: 400px;
-  border: 1px solid lightgray;
+  border: 4px solid #FAF15D;
   border-radius: 10px;
   padding-bottom: 10px;
-  margin-top: 25px;
+  margin-top: 80px;
 `;
 
 const TextArea = styled.textarea`
@@ -33,7 +33,7 @@ const TextArea = styled.textarea`
   padding-top: 10px;
   font-size: 17px;
   background-color: transparent;
-  border: 1px solid lightgray;
+  border: 4px solid #FAF15D;
   outline: none;
   color: lightgray;
   letter-spacing: 1px;
@@ -44,17 +44,20 @@ const TextArea = styled.textarea`
 `;
 
 const Button = styled.button`
-  background-color: pink;
-  width: 100%;
-  border: none;
-  height: 50px;
-  border-radius: 10px;
+  background-color: #C7F2E3;
+  width: 120px;
+  border: 4px solid steelblue;
+  height: 30px;
+  border-radius: 15px;
   color: #46516e;
-  font-size: 17px;
+  font-size: 18px;
+  position: relative;
+  left: 300px;
 `;
 
 const Form = styled.form`
   width: 400px;
+  margin-right: 10px;
 `;
 
 const MyRow = styled.div`
@@ -66,13 +69,13 @@ const MyRow = styled.div`
 
 const MyMessage = styled.div`
   width: 45%;
-  background-color: pink;
+  background-color: #A5F0E4;
   color: #46516e;
+  border: 2px solid darkblue;
   padding: 10px;
   margin-right: 5px;
   text-align: center;
-  border-top-right-radius: 10%;
-  border-bottom-right-radius: 10%;
+  border-radius:15px
 `;
 
 const PartnerRow = styled(MyRow)`
@@ -81,14 +84,13 @@ const PartnerRow = styled(MyRow)`
 
 const PartnerMessage = styled.div`
   width: 45%;
-  background-color: transparent;
+  background-color: #C56183;
   color: lightgray;
-  border: 1px solid lightgray;
+  border: 2px solid lightgray;
   padding: 10px;
   margin-left: 5px;
   text-align: center;
-  border-top-left-radius: 10%;
-  border-bottom-left-radius: 10%;
+  border-radius: 15px;
 `;
 
 const App = () => {
@@ -131,6 +133,8 @@ const App = () => {
 
   return (
     <Page>
+      <Header>
+      </Header>
       <Container>
         {messages.map((message, index) => {
           if (message.id === yourID) {
@@ -152,7 +156,7 @@ const App = () => {
         })}
       </Container>
       <Form onSubmit={sendMessage}>
-        <TextArea value={message} onChange={handleChange} placeholder="Say something..." />
+        <TextArea value={message} onChange={handleChange} placeholder="Write something..." />
         <Button>Send</Button>
       </Form>
     </Page>
