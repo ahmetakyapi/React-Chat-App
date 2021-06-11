@@ -17,7 +17,7 @@ git clone https://github.com/ahmetakyapi/React-Chat-App.git
 yarn install
 # Open the server.js file in the terminal
 node server.js
-#Then we open the client folder in the terminal
+#Then open the client folder in the terminal
 yarn start
 ```
 
